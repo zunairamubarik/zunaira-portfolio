@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zunaira Mubarik | Creative Designer & Digital Marketing Specialist</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              obsidian: {
+                DEFAULT: '#0b0914',
+                surface: '#131022',
+                card: '#18142b',
+                border: '#2a244b'
+              },
+              brand: {
+                50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd',
+                400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9',
+                800: '#5b21b6', 900: '#4c1d95', glow: '#c084fc'
+              },
+              editorial: {
+                bg: '#faf9fc', card: '#ffffff', text: '#0f0d1b', muted: '#52525b', border: '#e4e4e7'
+              }
+            },
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+              display: ['Outfit', 'Plus Jakarta Sans', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      ::-webkit-scrollbar { width: 10px; }
+      ::-webkit-scrollbar-track { background: #0b0914; }
+      ::-webkit-scrollbar-thumb { background: #2a244b; border-radius: 5px; }
+      ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+      .text-gradient {
+        background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #a78bfa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .bg-dots-pattern {
+        background-image: radial-gradient(rgba(139, 92, 246, 0.18) 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+    </style>
+  </head>
+  <body class="bg-obsidian text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Standalone Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 py-4 bg-obsidian/90 backdrop-blur-md border-b border-brand-900/40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-2">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-display font-bold text-lg shadow-md">
+            ZM
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-bold text-base tracking-tight text-white">Zunaira Mubarik</span>
+            <span class="text-[10px] text-slate-400 font-medium tracking-wider uppercase">Creative & Digital Marketing</span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-1 bg-obsidian-card p-1.5 rounded-full border border-brand-900/40">
+          <a href="#home" class="px-4 py-2 rounded-full text-xs font-semibold text-white bg-brand-600">Home</a>
+          <a href="#about" class="px-4 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white">About</a>
+          <a href="#skills" class="px-4 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white">Services</a>
+          <a href="#experience" class="px-4 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white">Experience</a>
+          <a href="#projects" class="px-4 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white">Projects</a>
+          <a href="#certifications" class="px-4 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white">Certifications</a>
+          <a href="#contact" class="px-4 py-2 rounded-full text-xs font-medium text-slate-300 hover:text-white">Contact</a>
+        </nav>
+
+        <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-brand-600 hover:bg-brand-500 text-white transition-all">
+          <span>Let's Work Together</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-36 pb-24 bg-dots-pattern">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-950/90 border border-brand-500/30 text-brand-300 text-xs font-semibold uppercase tracking-wide">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-400"></i>
+          <span>3+ Years Professional Experience</span>
+        </div>
+
+        <div class="space-y-4">
+          <h1 class="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold text-white tracking-tight">
+            <span class="block text-gradient">Zunaira Mubarik</span>
+            <span class="block text-2xl sm:text-4xl md:text-5xl font-medium text-brand-300 mt-2 font-sans">
+              Creative Designer & Digital Marketing Specialist
+            </span>
+          </h1>
+          <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg leading-relaxed pt-2">
+            Bridging aesthetics and strategic marketing to build high-converting digital experiences. BSCS graduate with 3+ years of hands-on experience combining visual UI/UX design, graphic branding, WordPress development, Meta Ads management, SEO, and GoHighLevel workflow automation.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-lg transition-all">
+            <span>View My Work</span>
+            <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-obsidian-surface hover:bg-obsidian-card text-white font-semibold text-sm border border-brand-500/30">
+            <span>Let's Work Together</span>
+          </a>
+        </div>
+
+        {/* Quick Skill Tags */}
+        <div class="pt-8 flex flex-wrap justify-center gap-2">
+          <span class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-brand-900/50 text-xs font-semibold text-slate-300">UI/UX Design</span>
+          <span class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-brand-900/50 text-xs font-semibold text-slate-300">Graphic Design</span>
+          <span class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-brand-900/50 text-xs font-semibold text-slate-300">WordPress Design</span>
+          <span class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-brand-900/50 text-xs font-semibold text-slate-300">Social Media Design</span>
+          <span class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-brand-900/50 text-xs font-semibold text-slate-300">Meta Ads</span>
+          <span class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-brand-900/50 text-xs font-semibold text-slate-300">SEO</span>
+          <span class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-brand-900/50 text-xs font-semibold text-slate-300">Digital Marketing</span>
+          <span class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-brand-900/50 text-xs font-semibold text-slate-300">GHL / Automation</span>
+          <span class="px-3 py-1.5 rounded-lg bg-obsidian-surface border border-brand-900/50 text-xs font-semibold text-slate-300">Lead Generation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-editorial-bg text-editorial-text">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-600 px-3.5 py-1 rounded-full bg-brand-100 border border-brand-200">
+            Professional Profile
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900">About Zunaira Mubarik</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-editorial-border shadow-sm space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600">
+                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900">Academic Background</h3>
+                <p class="text-xs text-brand-600 font-semibold uppercase">Computer Science Graduate</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1">
+              <div class="flex justify-between items-center font-bold text-slate-900 text-sm">
+                <span>BSCS (Bachelor of Science in Computer Science)</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-brand-100 text-brand-700 text-xs">Completed in 2026</span>
+              </div>
+              <p class="text-xs text-slate-600 font-medium">Virtual University</p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900">Core Strengths & Focus:</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                3+ years professional experience spanning UI/UX design, graphic design, WordPress, SEO, Meta Ads, lead generation, and GoHighLevel workflow automation.
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-obsidian text-white p-8 rounded-3xl border border-brand-900/50 shadow-xl space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-brand-600/30 border border-brand-500/40 flex items-center justify-center text-brand-400">
+                <i data-lucide="briefcase" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Experience Highlights</h3>
+                <p class="text-xs text-brand-300 font-semibold uppercase">3+ Years Industry Practice</p>
+              </div>
+            </div>
+            <ul class="space-y-3 text-xs text-slate-300">
+              <li class="p-3 rounded-xl bg-obsidian-surface border border-brand-900/40">
+                <strong class="text-brand-400 block mb-1">UI/UX & Web Design</strong>
+                Figma wireframing, responsive WordPress e-commerce websites & Elementor layouts.
+              </li>
+              <li class="p-3 rounded-xl bg-obsidian-surface border border-brand-900/40">
+                <strong class="text-brand-400 block mb-1">Advertising & SEO</strong>
+                Meta ad campaigns (FB & IG), lead-generation, keyword research & technical SEO audits.
+              </li>
+              <li class="p-3 rounded-xl bg-obsidian-surface border border-brand-900/40">
+                <strong class="text-brand-400 block mb-1">GHL & Automation</strong>
+                GoHighLevel websites, automated workflows, SMS/email nurture sequences, forms & calendars.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="py-24 bg-obsidian text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-400 px-3.5 py-1 rounded-full bg-brand-950 border border-brand-500/30">
+            Career Timeline
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Professional Experience</h2>
+        </div>
+
+        <div class="space-y-8 max-w-4xl mx-auto">
+          <!-- Moorthix -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-obsidian-surface border border-brand-900/40 space-y-4">
+            <div class="flex flex-col sm:flex-row justify-between gap-2 border-b border-brand-900/30 pb-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">Lead Generation & GHL Automation Specialist</h3>
+                <span class="text-xs font-semibold text-brand-400">Moorthix Automation • Remote</span>
+              </div>
+              <span class="text-xs font-bold text-slate-400 bg-obsidian-card px-3 py-1 rounded-full border border-brand-900">
+                January 2026 – Present
+              </span>
+            </div>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+              <li>• Created 15+ websites and landing pages using GoHighLevel</li>
+              <li>• Built automated workflows, triggers, actions, and follow-ups</li>
+              <li>• Configured web forms, calendars, and conversation management</li>
+              <li>• Automated email/SMS campaigns & cold outreach lead-gen</li>
+              <li>• Served HVAC companies in Canada and MedSpa businesses</li>
+            </ul>
+            <div class="p-3 rounded-xl bg-brand-950/60 border border-brand-500/30 text-xs text-brand-200">
+              <strong>Websites Created (15+ Total):</strong> Divine Spa, GTA Thrive Directory, On-Time HVAC, Gupta Aesthetic, Aesthetic MedSpa
+            </div>
+          </div>
+
+          <!-- Redshift -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-obsidian-surface border border-brand-900/40 space-y-4">
+            <div class="flex flex-col sm:flex-row justify-between gap-2 border-b border-brand-900/30 pb-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">Graphic Designer & Ad Manager</h3>
+                <span class="text-xs font-semibold text-brand-400">Redshift Online • Remote</span>
+              </div>
+              <span class="text-xs font-bold text-slate-400 bg-obsidian-card px-3 py-1 rounded-full border border-brand-900">
+                Approx. 1 Year
+              </span>
+            </div>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+              <li>• Designed social media posts for Canadian realtors</li>
+              <li>• Created high-converting ad creatives</li>
+              <li>• Managed Facebook and Instagram content & design</li>
+              <li>• Ran lead-generation campaigns for real estate clients across Canada</li>
+              <li>• Generated leads handled by appointment setters</li>
+            </ul>
+          </div>
+
+          <!-- Spiral UAE -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-obsidian-surface border border-brand-900/40 space-y-4">
+            <div class="flex flex-col sm:flex-row justify-between gap-2 border-b border-brand-900/30 pb-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">Graphic Designer</h3>
+                <span class="text-xs font-semibold text-brand-400">Spiral UAE • Remote / Agency</span>
+              </div>
+              <span class="text-xs font-bold text-slate-400 bg-obsidian-card px-3 py-1 rounded-full border border-brand-900">
+                Approx. 1 Year
+              </span>
+            </div>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+              <li>• Designed social media posts and portfolio materials</li>
+              <li>• Created advertising creatives and blog/website graphics</li>
+              <li>• Managed FB, IG, and LinkedIn visual content</li>
+            </ul>
+            <div class="p-3 rounded-xl bg-obsidian-card border border-brand-900/30 text-xs text-slate-300">
+              <strong>Clients Included:</strong> Royal Blizz (blog images), DU (ad creatives & social posts), Sheraki (ad creatives & social posts), Nikki's Salon (social posts), Broadband (website images)
+            </div>
+          </div>
+
+          <!-- Meqy Jewellers -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-obsidian-surface border border-brand-900/40 space-y-4">
+            <div class="flex flex-col sm:flex-row justify-between gap-2 border-b border-brand-900/30 pb-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">SEO Analyst</h3>
+                <span class="text-xs font-semibold text-brand-400">Meqy Jewellers • E-Commerce</span>
+              </div>
+              <span class="text-xs font-bold text-slate-400 bg-obsidian-card px-3 py-1 rounded-full border border-brand-900">
+                Approx. 1 Year
+              </span>
+            </div>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+              <li>• Keyword research, on-page SEO, technical SEO & audits</li>
+              <li>• Managed Google Search Console & Google Analytics</li>
+              <li>• Improved website search rankings, organic traffic, and organic orders</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-24 bg-editorial-bg text-editorial-text">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-600 px-3.5 py-1 rounded-full bg-brand-100 border border-brand-200">
+            Professional Credentials
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900">Certifications</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- DigiSkills -->
+          <div class="p-6 rounded-3xl bg-white border border-editorial-border shadow-sm space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold text-lg text-slate-900">WordPress & SEO</h3>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">Certificate Available</span>
+            </div>
+            <p class="text-xs text-brand-600 font-semibold uppercase">DigiSkills</p>
+          </div>
+
+          <!-- NAVTTC -->
+          <div class="p-6 rounded-3xl bg-white border border-editorial-border shadow-sm space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold text-lg text-slate-900">CIT (Certificate in Information Technology)</h3>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">Certificate Available</span>
+            </div>
+            <p class="text-xs text-brand-600 font-semibold uppercase">NAVTTC</p>
+          </div>
+
+          <!-- Akhuwat -->
+          <div class="p-6 rounded-3xl bg-amber-50/80 border border-amber-200 shadow-sm space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold text-lg text-slate-900">Digital Marketing</h3>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-white text-xs font-bold">3rd Position & Merit Award</span>
+            </div>
+            <p class="text-xs text-amber-800 font-semibold uppercase">Akhuwat</p>
+            <p class="text-xs text-slate-600">Achieved 3rd position, received prize money and merit certificate.</p>
+          </div>
+
+          <!-- PSDF -->
+          <div class="p-6 rounded-3xl bg-slate-100 border border-slate-200 space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold text-lg text-slate-900">UI/UX Design Coursework</h3>
+              <span class="px-2.5 py-0.5 rounded-full bg-slate-300 text-slate-800 text-xs font-semibold">Completed Partially</span>
+            </div>
+            <p class="text-xs text-slate-600 font-semibold uppercase">PSDF</p>
+            <p class="text-xs text-slate-500 italic">Completed partially; no formal certificate claimed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-obsidian text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-400 px-3.5 py-1 rounded-full bg-brand-950 border border-brand-500/30">
+          Get In Touch
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white">Let's Work Together</h2>
+
+        <div class="max-w-2xl mx-auto bg-obsidian-surface p-8 rounded-3xl border border-brand-900/40 space-y-6 text-left">
+          <div class="space-y-2">
+            <label class="text-xs font-bold uppercase tracking-wider text-slate-300">Email Address Placeholder</label>
+            <div class="p-3 rounded-xl bg-obsidian border border-brand-900 text-brand-300 font-mono text-sm">
+              zunaira.mubarik@example.com
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-xs font-bold uppercase tracking-wider text-slate-300">LinkedIn Profile Placeholder</label>
+            <div class="p-3 rounded-xl bg-obsidian border border-brand-900 text-brand-300 font-mono text-sm truncate">
+              https://linkedin.com/in/zunairamubarik
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-8 bg-obsidian border-t border-brand-900/40 text-center text-xs text-slate-500">
+      <p>© 2026 Zunaira Mubarik. All rights reserved. • BSCS Virtual University</p>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
