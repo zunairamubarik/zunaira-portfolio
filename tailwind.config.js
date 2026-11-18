@@ -8,44 +8,80 @@ export default {
   theme: {
     extend: {
       colors: {
-        emerald: {
-          deep: '#12372A',
-          forest: '#1F5942',
-          light: '#2D7A5D',
-          pale: '#EAF3EF',
+        teal: {
+          DEFAULT: '#1B3E48',
+          deep: '#142F37',
+          surface: '#224B57',
+          light: '#2B5D6B',
         },
-        gold: {
-          champagne: '#C89B5A',
-          light: '#E5C492',
-          dark: '#A67B3E',
-        },
-        ivory: {
-          DEFAULT: '#F7F5EF',
-          soft: '#FAF8F4',
-          dark: '#EBE7DF',
-        },
-        charcoal: {
-          DEFAULT: '#171A18',
-          light: '#2D322F',
-          muted: '#525B56',
+        brown: {
+          DEFAULT: '#602E18',
+          deep: '#472212',
+          surface: '#73371D',
+          light: '#864123',
         },
         terracotta: {
-          DEFAULT: '#C95C4A',
-          dark: '#B04B3A',
-          light: '#FDF1EF',
+          DEFAULT: '#CD7E59',
+          hover: '#BD6F4A',
+          dark: '#A65D39',
+          light: '#E29774',
+          subtle: 'rgba(205, 126, 89, 0.15)',
+        },
+        cream: {
+          DEFAULT: '#EFEADD',
+          pure: '#F7F4EC',
+          muted: '#DED8C7',
+        },
+        beige: {
+          DEFAULT: '#EADFCD',
+          light: '#F4ECE0',
+          dark: '#D5C5AC',
+        },
+        warmgrey: {
+          DEFAULT: '#7B7569',
+          light: '#9B9487',
+          dark: '#5C574E',
+          subtle: 'rgba(123, 117, 105, 0.25)',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        heading: ['Manrope', 'sans-serif'],
+        serif: ['Fraunces', 'serif'],
+        heading: ['Fraunces', 'serif'],
+        body: ['Alice', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        wordSlideUp: {
+          '0%': { transform: 'translateY(110%)', opacity: '0' },
+          '100%': { transform: 'translateY(0%)', opacity: '1' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 35s linear infinite',
+        'word-slide-up': 'wordSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'fade-in': 'fadeIn 0.5s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
       },
       boxShadow: {
-        'meqy': '0 4px 20px -2px rgba(18, 55, 42, 0.06), 0 2px 6px -1px rgba(18, 55, 42, 0.04)',
-        'meqy-hover': '0 12px 30px -4px rgba(18, 55, 42, 0.12), 0 4px 12px -2px rgba(18, 55, 42, 0.06)',
-        'meqy-modal': '0 25px 50px -12px rgba(18, 55, 42, 0.25)',
+        'terracotta-glow': '0 4px 20px -2px rgba(205, 126, 89, 0.25)',
+        'card-dark': '0 8px 30px -4px rgba(0, 0, 0, 0.35)',
+        'modal-dark': '0 25px 60px -12px rgba(0, 0, 0, 0.6)',
       },
       borderRadius: {
         'card': '16px',
+        'pill': '9999px',
       },
     },
   },

@@ -1,239 +1,142 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Send, Copy, Check } from 'lucide-react';
+import { Copy, Check, Mail, Sparkles, Clock, Globe } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedLinkedIn, setCopiedLinkedIn] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
-  };
+  const emailPlaceholder = personalInfo.contact.emailPlaceholder; // "[your email]"
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personalInfo.contact.emailPlaceholder);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2000);
-  };
-
-  const handleCopyLinkedIn = () => {
-    navigator.clipboard.writeText(personalInfo.contact.linkedInPlaceholder);
-    setCopiedLinkedIn(true);
-    setTimeout(() => setCopiedLinkedIn(false), 2000);
+  const handleCopyEmail = async () => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(emailPlaceholder);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch (err) {
+      // Fallback
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    }
   };
 
   return (
-    <section id="contact" className="py-24 bg-obsidian text-white relative overflow-hidden">
-      {/* Background Lighting */}
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-600/15 rounded-full blur-[140px] pointer-events-none"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section
+      id="contact"
+      className="relative bg-[#1B3E48] text-[#EFEADD] py-20 sm:py-24 lg:py-28 px-5 sm:px-8 lg:px-12 overflow-x-hidden border-t border-[#7B7569]/20"
+    >
+      <div className="max-w-4xl mx-auto w-full">
         
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center space-y-3 mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-400 px-3.5 py-1 rounded-full bg-brand-950/80 border border-brand-500/30">
-            Get In Touch
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white tracking-tight">
-            Let's create something impactful.
-          </h2>
-          <p className="max-w-xl text-slate-400 text-sm sm:text-base">
-            Have a project, collaboration or opportunity in mind? I'd love to hear about it.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        {/* Main Editorial Card */}
+        <div className="rounded-3xl bg-[#142F37] border border-[#7B7569]/30 p-8 sm:p-12 lg:p-14 shadow-2xl shadow-black/40 text-center relative overflow-hidden">
           
-          {/* Left Column: Direct Handles */}
-          <div className="lg:col-span-5 space-y-6">
+          {/* Subtle Corner Accents */}
+          <span className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#CD7E59] rounded-tl-3xl" aria-hidden="true" />
+          <span className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#CD7E59] rounded-br-3xl" aria-hidden="true" />
+
+          {/* Section Eyebrow */}
+          <div className="inline-flex items-center gap-2 mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#CD7E59]" />
+            <span className="text-xs sm:text-sm font-sans tracking-widest uppercase text-[#CD7E59] font-semibold">
+              Get In Touch
+            </span>
+          </div>
+
+          {/* Section Heading */}
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#EFEADD] tracking-tight leading-tight mb-4">
+            Let's Work <span className="text-[#CD7E59] italic font-serif font-normal">Together</span>
+          </h2>
+
+          {/* Truthful Subtext */}
+          <p className="font-body text-base sm:text-lg text-[#EFEADD]/85 max-w-xl mx-auto leading-relaxed mb-8">
+            I'm available for design, marketing and automation work for real businesses. Tell me about your project and I'll get back to you.
+          </p>
+
+          {/* Contact Interaction Area */}
+          <div className="flex flex-col items-center justify-center gap-4 max-w-md mx-auto">
             
-            <div className="bg-obsidian-surface p-8 rounded-3xl border border-brand-900/40 space-y-6 shadow-xl">
-              <div>
-                <h3 className="text-2xl font-display font-bold text-white">
-                  Direct Contact Handles
-                </h3>
-                <p className="text-xs text-slate-400 mt-1">
-                  Replace placeholders below with your primary contact details.
-                </p>
-              </div>
-
-              {/* Email Card CTA */}
-              <div className="p-4 rounded-2xl bg-obsidian-card border border-brand-900/40 space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2.5 text-brand-400 text-xs font-bold uppercase tracking-wider">
-                    <Mail className="w-4 h-4" />
-                    <span>Email Address</span>
-                  </div>
-                  <button
-                    onClick={handleCopyEmail}
-                    className="flex items-center gap-1 text-[11px] font-semibold text-brand-300 hover:text-white px-2.5 py-1 rounded bg-brand-950 border border-brand-900 transition-colors"
-                  >
-                    {copiedEmail ? (
-                      <>
-                        <Check className="w-3 h-3 text-emerald-400" />
-                        <span>Copied!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3 h-3" />
-                        <span>Copy Email</span>
-                      </>
-                    )}
-                  </button>
+            {/* Display Box for Email Placeholder */}
+            <div className="w-full flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-[#1B3E48] border border-[#7B7569]/30">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#142F37] border border-[#CD7E59]/40 flex items-center justify-center text-[#CD7E59] shrink-0">
+                  <Mail className="w-4 h-4" />
                 </div>
-                <p className="text-sm font-mono text-slate-200 font-medium">
-                  {personalInfo.contact.emailPlaceholder}
-                </p>
+                <span className="font-serif font-medium text-sm sm:text-base text-[#EADFCD] tracking-wide">
+                  {emailPlaceholder}
+                </span>
               </div>
 
-              {/* LinkedIn Card CTA */}
-              <div className="p-4 rounded-2xl bg-obsidian-card border border-brand-900/40 space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2.5 text-brand-400 text-xs font-bold uppercase tracking-wider">
-                    <Linkedin className="w-4 h-4" />
-                    <span>LinkedIn Profile</span>
-                  </div>
-                  <button
-                    onClick={handleCopyLinkedIn}
-                    className="flex items-center gap-1 text-[11px] font-semibold text-brand-300 hover:text-white px-2.5 py-1 rounded bg-brand-950 border border-brand-900 transition-colors"
-                  >
-                    {copiedLinkedIn ? (
-                      <>
-                        <Check className="w-3 h-3 text-emerald-400" />
-                        <span>Copied!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3 h-3" />
-                        <span>Copy Link</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-                <p className="text-xs font-mono text-slate-200 font-medium truncate">
-                  {personalInfo.contact.linkedInPlaceholder}
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-brand-950/40 border border-brand-900/40 flex items-center justify-between text-xs text-slate-300">
-                <span className="font-semibold">Contract Availability:</span>
-                <span className="text-brand-300 font-bold">Remote / Global</span>
-              </div>
+              {/* Status Indicator */}
+              <span className="text-[11px] font-sans px-2.5 py-1 rounded-full bg-[#142F37] text-[#7B7569] border border-[#7B7569]/20 hidden sm:inline-block">
+                Direct Contact
+              </span>
             </div>
+
+            {/* Terracotta "Copy Email" Button (Full-width on phone, min 48px tap target) */}
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              className="w-full min-h-[48px] py-3.5 px-8 rounded-full bg-[#CD7E59] hover:bg-[#BD6F4A] text-[#EFEADD] font-serif font-semibold text-base sm:text-lg flex items-center justify-center gap-2.5 shadow-lg shadow-[#CD7E59]/25 hover:shadow-xl hover:shadow-[#CD7E59]/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+              aria-label="Copy contact email placeholder to clipboard"
+            >
+              {copied ? (
+                <>
+                  <Check className="w-5 h-5 text-[#EFEADD]" />
+                  <span>Email Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-5 h-5 text-[#EFEADD]" />
+                  <span>Copy Email</span>
+                </>
+              )}
+            </button>
+
+            {/* Small Toast Notification */}
+            {copied && (
+              <div
+                role="status"
+                aria-live="polite"
+                className="mt-2 text-xs font-sans text-[#EADFCD] bg-[#602E18] border border-[#CD7E59] px-4 py-2 rounded-full animate-fade-in flex items-center gap-1.5"
+              >
+                <Check className="w-3.5 h-3.5 text-[#CD7E59]" />
+                <span>Email copied to clipboard ({emailPlaceholder})</span>
+              </div>
+            )}
 
           </div>
 
-          {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7 bg-obsidian-surface p-8 sm:p-10 rounded-3xl border border-brand-900/40 shadow-xl">
-            {submitted ? (
-              <div className="py-16 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-brand-600/20 border border-brand-500 flex items-center justify-center text-brand-400 mx-auto">
-                  <Check className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-display font-bold text-white">
-                  Message Sent
-                </h3>
-                <p className="text-slate-300 text-sm max-w-md mx-auto">
-                  Thank you for reaching out. Your inquiry has been logged locally in front-end preview mode.
-                </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="px-6 py-2.5 rounded-full bg-brand-600 text-white font-semibold text-xs hover:bg-brand-500 transition-colors"
+          {/* Socials Placeholder Block: Blank with "Socials — Coming Soon" */}
+          <div className="mt-12 pt-8 border-t border-[#7B7569]/20 flex flex-col items-center">
+            <span className="text-xs font-sans uppercase tracking-widest text-[#7B7569] font-medium mb-3">
+              Socials — Coming Soon
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+              {['LinkedIn', 'Behance', 'Instagram'].map((platform) => (
+                <div
+                  key={platform}
+                  className="px-4 py-1.5 rounded-full bg-[#1B3E48]/60 border border-[#7B7569]/25 text-xs font-sans text-[#7B7569]/80 cursor-not-allowed select-none"
                 >
-                  Send Another Message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <h3 className="text-2xl font-display font-bold text-white">
-                    Send a Message
-                  </h3>
-                  <p className="text-xs text-slate-400 mt-1">
-                    Fill out the form fields below to initiate project discussions.
-                  </p>
+                  {platform}
                 </div>
+              ))}
+            </div>
+            <p className="text-[11px] font-sans text-[#7B7569]/70 mt-3">
+              Verified public profiles will be linked here shortly.
+            </p>
+          </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {/* Name Input */}
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-wider text-slate-300">
-                      Name <span className="text-brand-400">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Your Full Name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-obsidian border border-brand-900/50 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-500 transition-colors"
-                    />
-                  </div>
-
-                  {/* Email Input */}
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-wider text-slate-300">
-                      Email <span className="text-brand-400">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="your.email@domain.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-obsidian border border-brand-900/50 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-500 transition-colors"
-                    />
-                  </div>
-                </div>
-
-                {/* Subject Field */}
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-slate-300">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Project Inquiry / Opportunity"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-obsidian border border-brand-900/50 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-500 transition-colors"
-                  />
-                </div>
-
-                {/* Message Field */}
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-slate-300">
-                    Message <span className="text-brand-400">*</span>
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    placeholder="Tell me about your project goals and scope..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-obsidian border border-brand-900/50 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-500 transition-colors"
-                  ></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 py-4 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold text-sm shadow-glow-md hover:shadow-glow-lg transition-all"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>Send Message</span>
-                </button>
-              </form>
-            )}
+          {/* Availability Details */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-[#7B7569]">
+            <div className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-[#CD7E59]" />
+              <span>{personalInfo.contact.availability}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Globe className="w-3.5 h-3.5 text-[#CD7E59]" />
+              <span>{personalInfo.contact.location}</span>
+            </div>
           </div>
 
         </div>
